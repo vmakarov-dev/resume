@@ -320,12 +320,8 @@
       color: var(--ink);
     }
 
-    /* Клиент: название и год начала сотрудничества в одной строке, описание ниже */
+    /* Клиент: название, через точку — год начала сотрудничества; описание ниже */
     .client__head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
       margin-bottom: 2px;
     }
 
@@ -334,10 +330,12 @@
     }
 
     .client__year {
-      flex: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .client__year::before {
+      content: ' · ';
     }
 
     .clients {
@@ -676,7 +674,7 @@
             <p>Техническое развитие email-каналов: разработка мастер-шаблонов, поддержка вёрстки и запуск AMP.</p>
           </li>
           <li>
-            <div class="client__head"><span><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span></span><span class="client__year">с&nbsp;2023</span></div>
+            <div class="client__head"><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span><span class="client__year">с&nbsp;2023</span></div>
             <p>Email-разработка для 130+ клиентов агентства: от аудита вёрстки до создания мастер-шаблонов и AMP-писем. Среди клиентов — федеральные ритейлеры и сети аптек, международные fashion- и premium-бренды, автопроизводители, travel-сервисы, финтех и EdTech.</p>
           </li>
           <li>
