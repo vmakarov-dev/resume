@@ -306,6 +306,117 @@
       color: var(--muted);
     }
 
+    /* «13 версий» подчёркнуты пунктиром — по наведению список почтовых клиентов
+       (только на экране) */
+    .hint {
+      position: relative;
+      white-space: nowrap;
+      cursor: help;
+      outline: none;
+      text-decoration: underline dotted #9a9da5;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 4px;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    .hint:hover,
+    .hint:focus-visible {
+      color: var(--ink);
+      text-decoration-color: var(--ink);
+    }
+
+    .hint__pop {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      z-index: 10;
+      width: max-content;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: normal;
+      counter-reset: hint;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -4px);
+      transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+    }
+
+    .hint__pop::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -6px;
+      border: 6px solid transparent;
+      border-bottom-color: var(--ink);
+    }
+
+    .hint:hover .hint__pop,
+    .hint:focus .hint__pop {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+
+    .hint__item {
+      display: block;
+      counter-increment: hint;
+    }
+
+    .hint__item::before {
+      content: counter(hint) '.';
+      display: inline-block;
+      width: 22px;
+      color: #8d9098;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Сердечко, «нарисованное карандашом» поверх листа рядом с заголовком */
+    .doodle-anchor {
+      position: relative;
+    }
+
+    /* Слева от заголовка, на поле листа */
+    .doodle {
+      position: absolute;
+      right: calc(100% + 11px);
+      top: 50%;
+      width: 27px;
+      height: 25px;
+      transform: translateY(-62%) rotate(-8deg);
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .doodle__wash {
+      fill: #dcf1e6;
+      opacity: 0.6;
+    }
+
+    .doodle__hatch {
+      fill: none;
+      stroke: #7cc4a0;
+      stroke-width: 1.3;
+      stroke-linecap: round;
+    }
+
+    .doodle__line {
+      fill: none;
+      stroke: #66686f;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .doodle__line--ghost {
+      stroke-width: 1.1;
+      opacity: 0.5;
+    }
+
     /* Опыт */
 
     .job__head {
@@ -340,8 +451,8 @@
 
     .clients {
       display: grid;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 16px;
+      margin-top: 20px;
     }
 
     .clients li {
@@ -432,8 +543,8 @@
       margin-left: 8px;
       padding: 2px 8px;
       border-radius: 6px;
-      background: #e8f1e6;
-      color: var(--accent);
+      background: #dcf1e6;
+      color: #2a6e4f;
       font-size: 12px;
       font-weight: 600;
       vertical-align: 1px;
@@ -476,6 +587,35 @@
       .stack__label {
         padding-right: 0;
         border-right: 0;
+      }
+
+      /* На телефоне подсказка — на всю ширину текста, под строкой с иконкой */
+      .skill__body {
+        position: relative;
+      }
+
+      .hint {
+        position: static;
+      }
+
+      .doodle {
+        right: auto;
+        left: calc(100% + 10px);
+      }
+
+      .hint__pop,
+      .hint:hover .hint__pop,
+      .hint:focus .hint__pop {
+        top: auto;
+        left: 0;
+        right: 0;
+        width: auto;
+        margin-top: 28px;
+        transform: none;
+      }
+
+      .hint__pop::before {
+        display: none;
       }
 
       .job__head {
@@ -521,8 +661,13 @@
         zoom: 0.84;
       }
 
-      .no-print {
+      .no-print,
+      .hint__pop {
         display: none !important;
+      }
+
+      .hint {
+        text-decoration: none;
       }
 
       .section__title,
@@ -551,7 +696,7 @@
       }
 
       .clients li + li {
-        margin-top: 12px;
+        margin-top: 16px;
       }
 
       /* В PDF навыки — прежней раскладкой: название над текстом, без колонок и линий */
@@ -604,7 +749,7 @@
 
     <section class="section about">
       <h2 class="section__title display">О себе</h2>
-      <p>Более 5 лет исследую email с технической стороны, чтобы каждый читатель видел письмо именно таким, каким его задумала команда. Работал со <strong>140+ компаниями</strong>. Письма, созданные при моём участии, получили <strong>18&nbsp;наград</strong> отраслевых конкурсов, в том числе 9 первых мест.</p>
+      <p>Более 5 лет исследую email с технической стороны, чтобы каждый читатель видел письмо именно таким, каким его задумала команда. Работал со <strong>140+ компаниями</strong>. Письма, созданные при моём участии, получили <strong>18&nbsp;наград</strong> в&nbsp;отраслевых конкурсах, в том числе 9 первых мест.</p>
       <p>Инициировал и с нуля запустил AMP-направление в Skyeng, Bosco и других компаниях, внедрив технологию в повседневные рассылки без дополнительных затрат.</p>
       <p>Мой подход — <strong>не говорить «это невозможно»</strong>: даже самую сложную идею я готов взять в работу и найти способ её воплотить, чтобы у команды была полная свобода творчества.</p>
     </section>
@@ -615,15 +760,15 @@
         <article class="skill">
           <h3 class="skill__title">Вёрстка писем</h3>
           <div class="skill__body">
-            <p>Акционные, креативные и триггерные письма, мастер-шаблоны. Адаптивная вёрстка с учётом особенностей 13 версий почтовых клиентов. Проработка тёмной темы. Ревью кода по <strong>авторскому чек-листу из 44 критериев</strong> и тестирование на реальных устройствах.</p>
-            <p class="stack"><span class="stack__label">Стек</span><span>HTML, CSS, табличная вёрстка, media queries, VML (для Outlook), VS Code, Git</span></p>
+            <p>Мастер-шаблоны, акционные, креативные и триггерные письма. Адаптивная вёрстка с учётом особенностей <span class="hint" tabindex="0" aria-describedby="mail-clients">13&nbsp;версий<span class="hint__pop" role="tooltip" id="mail-clients"><span class="hint__item">Gmail&nbsp;— десктоп</span><span class="hint__item">Gmail&nbsp;— Android</span><span class="hint__item">Gmail&nbsp;— iOS</span><span class="hint__item">Mail.ru&nbsp;— десктоп</span><span class="hint__item">Mail.ru&nbsp;— мобильная версия</span><span class="hint__item">Outlook&nbsp;— веб</span><span class="hint__item">Outlook&nbsp;— десктоп (до 2019)</span><span class="hint__item">Outlook&nbsp;— десктоп (2019 и новее)</span><span class="hint__item">Outlook&nbsp;— Android</span><span class="hint__item">Outlook&nbsp;— iOS</span><span class="hint__item">Яндекс Почта&nbsp;— десктоп</span><span class="hint__item">Яндекс Почта&nbsp;— мобильная версия</span><span class="hint__item">Apple Mail</span></span></span> почтовых клиентов. Проработка тёмной темы. Ревью кода по <strong>авторскому чек-листу из 44 критериев</strong> и тестирование на реальных устройствах.</p>
+            <p class="stack"><span class="stack__label">Стек</span><span>HTML, CSS, табличная вёрстка, media queries, VML (для Outlook), VS&nbsp;Code, Git</span></p>
           </div>
         </article>
 
         <article class="skill">
           <h3 class="skill__title">AMP-разработка</h3>
           <div class="skill__body">
-            <p>Сертификация под AMP, сложные игровые механики, утилитарные переиспользуемые AMP-блоки; собственная библиотека механик, адаптируемых под любую нишу.</p>
+            <p>Сложные игровые механики, утилитарные переиспользуемые AMP-блоки, сертификация под AMP. Собственная библиотека механик, адаптируемых под любую нишу.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>AMP for Email (amp-bind, amp-selector, amp-carousel, amp-accordion, amp-form, amp-list, amp-mustache), AMP Validator, Gmail AMP Playground</span></p>
           </div>
         </article>
@@ -639,7 +784,7 @@
         <article class="skill">
           <h3 class="skill__title">ИИ-автоматизация</h3>
           <div class="skill__body">
-            <p>Разработал и использую собственного ИИ-агента, который закрывает <strong>весь цикл подготовки письма</strong>: разбор ТЗ в любом формате, вёрстка по макету и создание новых блоков, работа с правками, вычитка и предварительная проверка по ФЗ&nbsp;«О&nbsp;рекламе», настройка UTM-меток, автоматическое ревью по критериям. Агент берёт на себя рутину, а архитектура решений и контроль качества остаются за мной.</p>
+            <p>Разработал и использую собственного ИИ-агента, который закрывает <strong>весь цикл подготовки письма</strong>: разбор ТЗ в любом формате, вёрстка по макету и создание новых блоков, работа с правками, вычитка и предварительная проверка по ФЗ&nbsp;«О&nbsp;рекламе», настройка UTM-меток, автоматическое ревью по критериям. Агент в&nbsp;6&nbsp;раз эффективнее справляется с&nbsp;рутиной, а&nbsp;архитектура решений и контроль качества остаются за мной.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>Claude (совместим с другими LLM)</span></p>
           </div>
         </article>
@@ -647,13 +792,39 @@
         <article class="skill">
           <h3 class="skill__title">Креатив и работа с&nbsp;макетами</h3>
           <div class="skill__body">
-            <p>Участие в разработке концепций писем, техническая оценка идей. Подготовка макетов к вёрстке: нарезка ассетов, адаптация готового дизайна к особенностям почтовых клиентов без потери стиля. Опыт полного цикла создания креативных писем.</p>
+            <p>Участие в разработке концепций писем, техническая оценка идей. Подготовка макетов к вёрстке, адаптация готового дизайна к особенностям почтовых клиентов без потери стиля. Опыт полного цикла создания креативных писем.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>Figma</span></p>
           </div>
         </article>
 
         <article class="skill">
-          <h3 class="skill__title">Доступность</h3>
+          <h3 class="skill__title"><span class="doodle-anchor">Доступность<svg class="doodle" viewBox="0 0 50 46" aria-hidden="true">
+              <defs>
+                <clipPath id="heart-clip"><path transform="translate(1.4 1.2)" d="M25 41C17 34 5 26 5 15c0-7 5-11 10.5-10.5 4.5.5 8 4 9.5 8 1.8-4.5 5.5-8.3 10.5-8.2 6 .2 10 4.7 9.5 11.7-.7 10-12 17.5-20 25Z" /></clipPath>
+                <filter id="pencil" x="-15%" y="-15%" width="130%" height="130%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="4" result="wobble" />
+                  <feDisplacementMap in="SourceGraphic" in2="wobble" scale="1.8" result="moved" />
+                  <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="11" result="grain" />
+                  <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2 2.2" result="grainAlpha" />
+                  <feComposite in="moved" in2="grainAlpha" operator="in" />
+                </filter>
+                <filter id="pencil-soft" x="-15%" y="-15%" width="130%" height="130%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="4" result="wobble" />
+                  <feDisplacementMap in="SourceGraphic" in2="wobble" scale="1.4" result="moved" />
+                  <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="1" seed="2" result="grain" />
+                  <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 2.3" result="grainAlpha" />
+                  <feComposite in="moved" in2="grainAlpha" operator="in" />
+                </filter>
+              </defs>
+              <g clip-path="url(#heart-clip)" filter="url(#pencil)">
+                <path class="doodle__wash" transform="translate(1.4 1.2)" d="M25 41C17 34 5 26 5 15c0-7 5-11 10.5-10.5 4.5.5 8 4 9.5 8 1.8-4.5 5.5-8.3 10.5-8.2 6 .2 10 4.7 9.5 11.7-.7 10-12 17.5-20 25Z" />
+                <path class="doodle__hatch" d="M-30.2 46.5L-1.8 -1.6M-25.9 46.4L2.3 -1.6M-22.0 46.4L6.5 -0.5M-17.9 47.2L11.1 -0.9M-12.6 46.4L15.2 -1.3M-9.9 46.7L19.1 -1.4M-4.8 46.8L23.1 -1.6M-1.5 47.3L26.8 -1.3M3.2 46.7L31.7 -0.7M7.4 47.0L35.8 -0.7M12.1 46.5L39.3 -0.6M15.3 46.4L43.6 -0.6M20.2 46.7L48.0 -0.9M24.0 47.5L52.7 -1.0M27.9 47.3L56.8 -0.3M32.9 46.8L61.4 -1.7M37.0 46.5L64.8 -0.6M41.0 46.8L69.9 -1.6M45.7 47.5L74.1 -0.5M49.6 46.8L78.2 -0.4M53.2 46.6L81.3 -1.0M57.7 46.3L85.9 -1.2" />
+              </g>
+              <g filter="url(#pencil-soft)">
+                <path class="doodle__line" d="M24.2 13.5C22.8 8.6 19.5 5.2 15 5 9.2 4.8 5.6 9.4 6 15.6c.6 9.9 10.5 16.9 19.4 25.2 7.6-7.2 18.2-14.4 19-24.4.5-6.8-3.4-11.3-8.8-11.2-5 .1-8.4 3.4-10 8.2l.9-2.4" />
+                <path class="doodle__line doodle__line--ghost" d="M25.6 12.6C23.6 7.8 20 4.4 14.6 4.4 8.6 4.6 4.9 9.6 5.5 16.2c.9 9.4 10.8 16.2 19.2 24.1M25.6 40.2c7.4-7 17.6-13.8 18.9-23.9.8-6.6-2.6-11.6-8.4-11.8-4.4-.1-8 2.6-10 7" />
+              </g>
+            </svg></span></h3>
           <div class="skill__body">
             <p>Адаптация писем для незрячих и слабовидящих — семантическая разметка, alt-тексты, ARIA-роли, скрытые подписи для скринридеров. <strong>Каждое решение тестировал с незрячими пользователями</strong>, чтобы письмо было удобно не только читать, но и слушать. <strong>Так бренд не теряет часть аудитории.</strong></p>
             <p class="stack"><span class="stack__label">Стек</span><span>VoiceOver, NVDA</span></p>
@@ -683,7 +854,7 @@
           </li>
           <li>
             <div class="client__head"><b>ToStars</b><span class="client__year">с&nbsp;2025</span></div>
-            <p>Самостоятельное создание креативных писем: от идеи и текста до дизайна и вёрстки. Разработка и дизайн нового мастер-шаблона. Проработка концепции всего email-маркетинга компании.</p>
+            <p>Самостоятельное создание креативных писем: от идеи и текста до дизайна и вёрстки. Разработка и дизайн нового мастер-шаблона.</p>
           </li>
         </ul>
       </div>
