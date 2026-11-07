@@ -469,8 +469,8 @@
 
     .clients {
       display: grid;
-      gap: 16px;
-      margin-top: 20px;
+      gap: 26px;
+      margin-top: 26px;
     }
 
     .clients li {
@@ -711,6 +711,11 @@
       .skills,
       .clients {
         display: block;
+      }
+
+      /* В PDF прежний отступ над списком компаний — на сайте он больше */
+      .clients {
+        margin-top: 20px;
       }
 
       .clients li + li {
