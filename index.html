@@ -449,6 +449,24 @@
       content: ' · ';
     }
 
+    /* Достижения: зелёная галочка, текст чуть темнее обязанностей */
+    .ach {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 20px;
+      color: var(--ink);
+    }
+
+    .ach::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.6 6.6 11.6 12.5 4.8' fill='none' stroke='%233f9a70' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+    }
+
     .clients {
       display: grid;
       gap: 16px;
@@ -696,7 +714,7 @@
       }
 
       .clients li + li {
-        margin-top: 16px;
+        margin-top: 14px;
       }
 
       /* В PDF навыки — прежней раскладкой: название над текстом, без колонок и линий */
@@ -707,11 +725,24 @@
       }
 
       .skill + .skill {
-        margin-top: 22px;
+        margin-top: 18px;
       }
 
       .skill__title {
         margin-bottom: 4px;
+      }
+
+      /* Чуть плотнее вертикальные отступы, чтобы опыт уместился на второй странице */
+      .section {
+        margin-top: 36px;
+      }
+
+      .section__title {
+        margin-bottom: 14px;
+      }
+
+      .ach {
+        margin-top: 6px;
       }
 
       /* Награды целиком на последней странице, не разрываем блок */
@@ -841,20 +872,24 @@
         </div>
         <ul class="clients">
           <li>
-            <div class="client__head"><b>Bosco и&nbsp;«ГУМ Аутлет»</b><span class="client__year">с&nbsp;2022</span></div>
-            <p>Техническое развитие email-каналов: разработка мастер-шаблонов, поддержка вёрстки и&nbsp;запуск AMP.</p>
-          </li>
-          <li>
-            <div class="client__head"><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span><span class="client__year">с&nbsp;2023</span></div>
-            <p>Email-разработка для&nbsp;130+&nbsp;клиентов агентства: от&nbsp;аудита вёрстки до&nbsp;создания мастер-шаблонов и&nbsp;AMP-писем. Среди клиентов&nbsp;— федеральные ритейлеры и&nbsp;сети аптек, международные fashion- и&nbsp;premium-бренды, автопроизводители, travel-сервисы, финтех и&nbsp;EdTech.</p>
-          </li>
-          <li>
             <div class="client__head"><b>Skyeng</b><span class="client__year">с&nbsp;2024</span></div>
-            <p>Вёрстка писем: от&nbsp;регулярных рассылок до&nbsp;акционных писем со&nbsp;сложным дизайном. Запуск AMP-направления с&nbsp;нуля: сертификация с&nbsp;первого раза и&nbsp;вёрстка AMP-писем; после успеха AMP внедрили и&nbsp;в&nbsp;B2B-направлении.</p>
+            <p>Вёрстка писем Skyeng и&nbsp;Skysmart&nbsp;— от&nbsp;регулярных рассылок до&nbsp;акционных со&nbsp;сложным дизайном.</p>
+            <p class="ach">Снял ограничения со&nbsp;стороны вёрстки: в&nbsp;рассылках появились креативные письма с&nbsp;нестандартным дизайном, а&nbsp;команда получила свободу для&nbsp;идей. Запустил AMP-направление с&nbsp;нуля; сертификацию прошли с&nbsp;первого раза. После успеха внедрил технологию и&nbsp;в&nbsp;B2B-направлении.</p>
           </li>
           <li>
             <div class="client__head"><b>ToStars</b> <span class="client__note">(Сезонные проекты)</span><span class="client__year">с&nbsp;2024</span></div>
-            <p>Самостоятельное создание креативных писем: от&nbsp;идеи и&nbsp;текста до&nbsp;дизайна и&nbsp;вёрстки. Разработка и&nbsp;дизайн нового мастер-шаблона.</p>
+            <p>Самостоятельное создание креативных писем: от&nbsp;идеи и&nbsp;текста до&nbsp;дизайна и&nbsp;вёрстки.</p>
+            <p class="ach">Разработал дизайн и&nbsp;сверстал новый мастер-шаблон. Заказчик возвращается с&nbsp;новыми проектами каждый сезон.</p>
+          </li>
+          <li>
+            <div class="client__head"><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span><span class="client__year">с&nbsp;2023</span></div>
+            <p>Email-разработка для&nbsp;130+&nbsp;клиентов агентства&nbsp;— от&nbsp;аудита вёрстки до&nbsp;создания мастер-шаблонов и&nbsp;AMP-писем. Среди клиентов, для&nbsp;которых я&nbsp;решал задачи&nbsp;— федеральные ритейлеры и&nbsp;сети аптек, международные fashion- и&nbsp;premium-бренды, автопроизводители, travel-сервисы, финтех и&nbsp;EdTech.</p>
+            <p class="ach">Выстроил собственную систему работы: мастер-шаблоны теперь верстаются в&nbsp;3&nbsp;раза быстрее, а&nbsp;правок стало вдвое меньше. Сверстал AMP-письма для&nbsp;10+&nbsp;заказчиков.</p>
+          </li>
+          <li>
+            <div class="client__head"><b>Bosco</b><span class="client__year">с&nbsp;2022</span></div>
+            <p>Техническое развитие email-каналов, поддержка вёрстки регулярных рассылок и&nbsp;триггерных писем.</p>
+            <p class="ach">Сверстал мастер-шаблоны и&nbsp;запустил AMP. В&nbsp;сжатые сроки перенёс рассылки на&nbsp;новую платформу без&nbsp;перерыва в&nbsp;коммуникациях.</p>
           </li>
         </ul>
       </div>
