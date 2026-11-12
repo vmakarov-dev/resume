@@ -426,9 +426,27 @@
       gap: 16px;
     }
 
+    /* Заголовок места работы: компания жирным, роль обычным, период серым */
     .job__title {
-      font: 650 18px/1.35 var(--f-text);
+      font: 400 18px/1.35 var(--f-text);
       color: var(--ink);
+    }
+
+    .job__title b {
+      font-weight: 650;
+    }
+
+    .job__year {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .job + .job {
+      margin-top: 32px;
+    }
+
+    .job__head + p {
+      margin-top: 8px;
     }
 
     /* Клиент: название, через точку — год начала сотрудничества; описание ниже */
@@ -730,7 +748,7 @@
       }
 
       .skill + .skill {
-        margin-top: 18px;
+        margin-top: 14px;
       }
 
       .skill__title {
@@ -739,7 +757,7 @@
 
       /* Чуть плотнее вертикальные отступы, чтобы опыт уместился на второй странице */
       .section {
-        margin-top: 36px;
+        margin-top: 30px;
       }
 
       .section__title {
@@ -750,10 +768,13 @@
         margin-top: 6px;
       }
 
-      /* Награды целиком на последней странице, не разрываем блок */
-      .awards {
-        break-before: page;
-        margin-top: 0;
+      /* Награды идут сразу за навыками, без переноса на новую страницу; список плотнее */
+      .wins__title {
+        margin-top: 18px;
+      }
+
+      .wins li {
+        padding: 5px 0;
       }
     }
   </style>
@@ -768,8 +789,9 @@
         <ul class="contacts">
           <li>Telegram: <a href="https://t.me/valeriymakarov">@valeriymakarov</a></li>
           <li><a href="mailto:contact@vmakarov.dev">contact@vmakarov.dev</a></li>
-          <li><a href="tel:+79151167687">+7 915 116-76-87</a></li>
+          <li>+7&nbsp;915&nbsp;116-76-87</li>
           <li class="contacts__break" aria-hidden="true"></li>
+          <li>28&nbsp;лет</li>
           <li>Формат работы: удалённый</li>
           <li>English: B2+/C1</li>
         </ul>
@@ -785,9 +807,54 @@
 
     <section class="section about">
       <h2 class="section__title display">О&nbsp;себе</h2>
-      <p>Более 5&nbsp;лет исследую email с&nbsp;технической стороны, чтобы каждый читатель видел письмо именно таким, каким его&nbsp;задумала команда. Работал со <strong>140+&nbsp;компаниями</strong>. Письма, созданные при&nbsp;моём участии, получили <strong>18&nbsp;наград</strong> в&nbsp;отраслевых конкурсах, в&nbsp;том числе 9&nbsp;первых мест.</p>
+      <p>Более 5&nbsp;лет в&nbsp;email-разработке, работал со&nbsp;<strong>140+&nbsp;компаниями</strong>. Письма, созданные при&nbsp;моём участии, получили <strong>18&nbsp;наград</strong>, в&nbsp;том числе 9&nbsp;первых мест.</p>
       <p>Инициировал и&nbsp;с&nbsp;нуля запустил AMP-направление в&nbsp;Skyeng, Bosco и&nbsp;других компаниях, внедрив технологию в&nbsp;повседневные рассылки без&nbsp;дополнительных затрат.</p>
-      <p>Мой подход&nbsp;— <strong>не&nbsp;говорить «это невозможно»</strong>: даже самую сложную идею я&nbsp;готов взять в&nbsp;работу и&nbsp;найти способ её&nbsp;воплотить, чтобы у&nbsp;команды была полная свобода творчества.</p>
+      <p>Мой подход&nbsp;— <strong>не&nbsp;говорить «это невозможно»</strong>: беру в&nbsp;работу даже самые сложные идеи и&nbsp;нахожу способ их&nbsp;воплотить, чтобы дать команде полную свободу творчества.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title display">Опыт</h2>
+      <div class="job">
+        <div class="job__head">
+          <h3 class="job__title"><b>Skyeng</b>. Email-разработчик. <span class="job__year">2024&nbsp;— н.&nbsp;в.</span></h3>
+        </div>
+        <p>Вёрстка писем для&nbsp;языковой онлайн-школы Skyeng, детской школы Skysmart и&nbsp;их&nbsp;B2B-направлений.</p>
+        <p class="ach">Изменил процесс работы над&nbsp;креативными письмами: взял на&nbsp;себя всю техническую сторону, и&nbsp;команда теперь выбирает формат письма под&nbsp;маркетинговую задачу, а&nbsp;не&nbsp;под&nbsp;возможности вёрстки.</p>
+        <p class="ach">13&nbsp;отраслевых наград за&nbsp;письма Skyeng и&nbsp;Skysmart с&nbsp;2024&nbsp;года, шесть из&nbsp;них за&nbsp;первое место в&nbsp;номинациях за&nbsp;креатив и&nbsp;дизайн. О&nbsp;письмах пишут профильные Telegram-каналы, они попадают в&nbsp;подборки лучших рассылок, а&nbsp;подписчики оставляют положительные отзывы в&nbsp;форме обратной связи.</p>
+        <p class="ach">С&nbsp;нуля запустил AMP-направление, сертификацию прошли с&nbsp;первого раза. В&nbsp;письмах появились геймификация и&nbsp;интерактивное повествование: читатели проходили тесты, играли в&nbsp;мини-игры и&nbsp;даже разгадывали настоящий кроссворд прямо в&nbsp;письме. Затем внедрил AMP в&nbsp;B2B-направлениях.</p>
+        <p class="ach">Закрыл пиковые нагрузки (чёрная пятница, back to school): до&nbsp;10&nbsp;писем в&nbsp;день без&nbsp;срыва сроков и&nbsp;ошибок в&nbsp;вёрстке.</p>
+        <p class="ach">Настроил своего ИИ-агента под&nbsp;письма Skyeng: семантику текстов, особенности шаблона и&nbsp;устоявшиеся практики команды. Рутинные задачи теперь выполняются в&nbsp;6&nbsp;раз быстрее.</p>
+      </div>
+
+      <div class="job">
+        <div class="job__head">
+          <h3 class="job__title"><b>Проектная работа</b>. Сотрудничество с&nbsp;брендами и&nbsp;агентствами. <span class="job__year">2022&nbsp;— н.&nbsp;в.</span></h3>
+        </div>
+        <ul class="clients">
+          <li>
+            <div class="client__head"><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span><span class="client__year">с&nbsp;2023</span></div>
+            <p>Email-разработка для&nbsp;130+&nbsp;клиентов агентства: аудит вёрстки, мастер-шаблоны, разметка под&nbsp;конструкторы, AMP-письма.</p>
+            <p class="ach">Сверстал 70+&nbsp;мастер-шаблонов, в&nbsp;том числе масштабные проекты до&nbsp;118&nbsp;блоков.</p>
+            <p class="ach">Разработал собственную библиотеку проверенных компонентов. Мой ИИ-агент адаптирует их&nbsp;под&nbsp;дизайн клиента, и&nbsp;шаблон не&nbsp;приходится верстать с&nbsp;нуля. Так я&nbsp;смог глубже погружаться в&nbsp;анализ макета, архитектурные решения и&nbsp;тестирование. Мастер-шаблоны стали готовиться в&nbsp;3&nbsp;раза быстрее, а&nbsp;правок вдвое меньше.</p>
+            <p class="ach">Сверстал AMP-письма для&nbsp;10+&nbsp;заказчиков.</p>
+          </li>
+          <li>
+            <div class="client__head"><b>Bosco di&nbsp;Ciliegi</b> <span class="client__note">(группа компаний: Bosco, ГУМ, Articoli)</span><span class="client__year">с&nbsp;2022</span></div>
+            <p>Техническое развитие email-каналов и&nbsp;вёрстка рассылок для&nbsp;Bosco, ГУМа, «ГУМ Аутлета», Bosco Outlet, Articoli. Поддержка ещё 6&nbsp;брендов группы: консультации, разбор и&nbsp;устранение проблем в&nbsp;письмах, вёрстка отдельных блоков под&nbsp;задачу.</p>
+            <p class="ach">Структурировал существующие письма и&nbsp;собрал для&nbsp;каждого бренда свой мастер-шаблон. Попутно провёл полный рефакторинг кода и&nbsp;устранил legacy-ошибки вёрстки.</p>
+            <p class="ach">Обеспечил запуск всех редизайнов в&nbsp;срок: письма переходили на&nbsp;новый стиль в&nbsp;тот же&nbsp;день, что&nbsp;и&nbsp;сайт.</p>
+            <p class="ach">За&nbsp;3&nbsp;дня перенёс 20+&nbsp;триггеров с&nbsp;«Битрикса» на&nbsp;Mindbox без&nbsp;перерыва в&nbsp;коммуникациях.</p>
+            <p class="ach">Запустил AMP-письма в&nbsp;Bosco, в&nbsp;том числе в&nbsp;триггерах: товарных карточек в&nbsp;письме стало на&nbsp;30% больше без&nbsp;увеличения его&nbsp;длины.</p>
+          </li>
+          <li>
+            <div class="client__head"><b>ToStars</b> <span class="client__note">(организатор путешествий)</span><span class="client__year">сезонные проекты</span><span class="client__year">с&nbsp;2024</span></div>
+            <p>Самостоятельное создание креативных писем: идея, текст, дизайн, вёрстка.</p>
+            <p class="ach">Принёс заказчику 14&nbsp;бронирований одним письмом при&nbsp;обычных 1–2&nbsp;с&nbsp;рассылки. Это письмо победило сразу в&nbsp;двух номинациях Unisender Awards 2026: «Письмо года» и&nbsp;«Эффективность года».</p>
+            <p class="ach">Всего получил 5&nbsp;наград за&nbsp;авторские письма на&nbsp;EC Awards и&nbsp;Unisender Awards, включая 3&nbsp;первых места. Заказчик возвращается с&nbsp;новыми проектами каждый сезон.</p>
+            <p class="ach">Разработал дизайн и&nbsp;сверстал новый мастер-шаблон для&nbsp;повседневных рассылок.</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="section">
@@ -796,15 +863,15 @@
         <article class="skill">
           <h3 class="skill__title">Вёрстка писем</h3>
           <div class="skill__body">
-            <p>Мастер-шаблоны, акционные, креативные и&nbsp;триггерные письма. Адаптивная вёрстка с&nbsp;учётом особенностей <span class="hint" tabindex="0" aria-describedby="mail-clients">13&nbsp;версий<span class="hint__pop" role="tooltip" id="mail-clients"><span class="hint__item">Gmail&nbsp;— десктоп</span><span class="hint__item">Gmail&nbsp;— Android</span><span class="hint__item">Gmail&nbsp;— iOS</span><span class="hint__item">Mail.ru&nbsp;— десктоп</span><span class="hint__item">Mail.ru&nbsp;— мобильная версия</span><span class="hint__item">Outlook&nbsp;— веб</span><span class="hint__item">Outlook&nbsp;— десктоп (до&nbsp;2019)</span><span class="hint__item">Outlook&nbsp;— десктоп (2019&nbsp;и&nbsp;новее)</span><span class="hint__item">Outlook&nbsp;— Android</span><span class="hint__item">Outlook&nbsp;— iOS</span><span class="hint__item">Яндекс Почта&nbsp;— десктоп</span><span class="hint__item">Яндекс Почта&nbsp;— мобильная версия</span><span class="hint__item">Apple Mail</span></span></span> почтовых клиентов. Проработка тёмной темы. Ревью кода по <strong>авторскому чек-листу из&nbsp;44&nbsp;критериев</strong> и&nbsp;тестирование на&nbsp;реальных устройствах.</p>
-            <p class="stack"><span class="stack__label">Стек</span><span>HTML, CSS, табличная вёрстка, кроссклиентная вёрстка, media queries, VML (для&nbsp;Outlook), VS&nbsp;Code, Git</span></p>
+            <p>Адаптивная вёрстка под&nbsp;<span class="hint" tabindex="0" aria-describedby="mail-clients">13&nbsp;версий<span class="hint__pop" role="tooltip" id="mail-clients"><span class="hint__item">Gmail&nbsp;— десктоп</span><span class="hint__item">Gmail&nbsp;— Android</span><span class="hint__item">Gmail&nbsp;— iOS</span><span class="hint__item">Mail.ru&nbsp;— десктоп</span><span class="hint__item">Mail.ru&nbsp;— мобильная версия</span><span class="hint__item">Outlook&nbsp;— веб</span><span class="hint__item">Outlook&nbsp;— десктоп (до&nbsp;2019)</span><span class="hint__item">Outlook&nbsp;— десктоп (2019&nbsp;и&nbsp;новее)</span><span class="hint__item">Outlook&nbsp;— Android</span><span class="hint__item">Outlook&nbsp;— iOS</span><span class="hint__item">Яндекс Почта&nbsp;— десктоп</span><span class="hint__item">Яндекс Почта&nbsp;— мобильная версия</span><span class="hint__item">Apple Mail</span></span></span> почтовых клиентов, тёмная тема, тестирование на&nbsp;реальных устройствах. Ревью кода по&nbsp;<strong>авторскому чек-листу из&nbsp;44&nbsp;критериев</strong>.</p>
+            <p class="stack"><span class="stack__label">Стек</span><span>HTML, CSS, табличная и&nbsp;кроссклиентная вёрстка, media queries, VML (для&nbsp;Outlook), VS&nbsp;Code, Git</span></p>
           </div>
         </article>
 
         <article class="skill">
           <h3 class="skill__title">AMP-разработка</h3>
           <div class="skill__body">
-            <p>Сложные игровые механики, утилитарные переиспользуемые AMP-блоки, сертификация под&nbsp;AMP. Собственная библиотека механик, адаптируемых под&nbsp;любую нишу.</p>
+            <p>Собственная библиотека игровых и&nbsp;утилитарных AMP-механик, адаптируемых под&nbsp;любую нишу.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>AMP for Email (amp-bind, amp-selector, amp-carousel, amp-accordion, amp-form, amp-list, amp-mustache), AMP Validator, Gmail AMP Playground</span></p>
           </div>
         </article>
@@ -812,7 +879,7 @@
         <article class="skill">
           <h3 class="skill__title">Платформы и&nbsp;шаблонизаторы</h3>
           <div class="skill__body">
-            <p>Персонализация и&nbsp;динамический контент&nbsp;— подстановка данных, условные блоки, циклы по&nbsp;товарам и&nbsp;заказам, динамические рекомендации. Разработка блоков и&nbsp;интеграция мастер-шаблонов в&nbsp;конструкторы писем.</p>
+            <p>Персонализация и&nbsp;динамический контент: подстановка данных, условные блоки, циклы по&nbsp;товарам и&nbsp;заказам, динамические рекомендации. Разметка под&nbsp;конструкторы.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>ESP/CDP&nbsp;— Mindbox, Unisender, Sendsay, DashaMail, Rubbles. Конструкторы&nbsp;— Letteros, Mindbox, Emailmaker</span></p>
           </div>
         </article>
@@ -820,15 +887,15 @@
         <article class="skill">
           <h3 class="skill__title">ИИ-автоматизация</h3>
           <div class="skill__body">
-            <p>Разработал и&nbsp;использую собственного ИИ-агента, который закрывает <strong>весь цикл подготовки письма</strong>: разбор ТЗ&nbsp;в&nbsp;любом формате, вёрстка по&nbsp;макету и&nbsp;создание новых блоков, работа с&nbsp;правками, а&nbsp;также лаборатория из&nbsp;5&nbsp;инструментов и&nbsp;3&nbsp;субагентов для&nbsp;полной подготовки коммуникации. Агент в&nbsp;6&nbsp;раз эффективнее справляется с&nbsp;рутиной, а&nbsp;архитектура решений и&nbsp;контроль качества остаются за&nbsp;мной.</p>
+            <p>Собственный ИИ-агент ведёт <strong>весь цикл подготовки письма</strong>: разбор ТЗ в&nbsp;любом формате, вёрстка по&nbsp;макету, создание новых блоков, работа с&nbsp;правками. Пять отдельных инструментов проверяют письмо перед отправкой: типографика, вычитка текста, тёмная тема, доступность, ссылки.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>Claude (совместим с&nbsp;другими LLM)</span></p>
           </div>
         </article>
 
         <article class="skill">
-          <h3 class="skill__title">Креатив и&nbsp;работа с&nbsp;макетами</h3>
+          <h3 class="skill__title">Работа с&nbsp;макетами</h3>
           <div class="skill__body">
-            <p>Участие в&nbsp;разработке концепций писем, техническая оценка идей. Подготовка макетов к&nbsp;вёрстке, адаптация готового дизайна к&nbsp;особенностям почтовых клиентов без&nbsp;потери стиля. Опыт полного цикла создания креативных писем.</p>
+            <p>Техническая оценка идей на&nbsp;этапе концепции, подготовка макетов к&nbsp;вёрстке, адаптация дизайна под&nbsp;почтовые клиенты без&nbsp;потери стиля.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>Figma</span></p>
           </div>
         </article>
@@ -862,41 +929,10 @@
               </g>
             </svg></span></h3>
           <div class="skill__body">
-            <p>Адаптация писем для&nbsp;незрячих и&nbsp;слабовидящих&nbsp;— семантическая разметка, alt-тексты, ARIA-роли, скрытые подписи для&nbsp;скринридеров. <strong>Каждое решение тестировал с&nbsp;незрячими пользователями</strong>, чтобы письмо было удобно не&nbsp;только читать, но&nbsp;и&nbsp;слушать. <strong>Так бренд не&nbsp;теряет часть аудитории.</strong></p>
+            <p>Адаптация писем для&nbsp;незрячих и&nbsp;слабовидящих: семантическая разметка, alt-тексты, ARIA-роли, скрытые подписи для&nbsp;скринридеров. <strong>Каждое решение тестировал с&nbsp;незрячими пользователями</strong>, чтобы бренд не&nbsp;терял часть аудитории.</p>
             <p class="stack"><span class="stack__label">Стек</span><span>VoiceOver, NVDA</span></p>
           </div>
         </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section__title display">Опыт</h2>
-      <div class="job">
-        <div class="job__head">
-          <h3 class="job__title">Email-разработчик · сотрудничество с&nbsp;брендами и&nbsp;агентствами</h3>
-        </div>
-        <ul class="clients">
-          <li>
-            <div class="client__head"><b>Skyeng</b><span class="client__year">с&nbsp;2024</span></div>
-            <p>Вёрстка писем Skyeng и&nbsp;Skysmart&nbsp;— от&nbsp;регулярных рассылок до&nbsp;акционных со&nbsp;сложным дизайном.</p>
-            <p class="ach">Снял ограничения со&nbsp;стороны вёрстки: в&nbsp;рассылках появились креативные письма с&nbsp;нестандартным дизайном, а&nbsp;команда получила свободу для&nbsp;идей. Запустил AMP-направление с&nbsp;нуля; сертификацию прошли с&nbsp;первого раза. После успеха внедрил технологию и&nbsp;в&nbsp;B2B-направлении.</p>
-          </li>
-          <li>
-            <div class="client__head"><b>Out of Cloud</b> <span class="client__note">(CRM-агентство)</span><span class="client__year">с&nbsp;2023</span></div>
-            <p>Email-разработка для&nbsp;130+&nbsp;клиентов агентства&nbsp;— от&nbsp;аудита вёрстки до&nbsp;создания мастер-шаблонов и&nbsp;AMP-писем. Среди клиентов, для&nbsp;которых я&nbsp;решал задачи,&nbsp;— федеральные ритейлеры и&nbsp;сети аптек, международные fashion- и&nbsp;premium-бренды, автопроизводители, travel-сервисы, финтех и&nbsp;EdTech.</p>
-            <p class="ach">Выстроил собственную систему работы: мастер-шаблоны теперь верстаются в&nbsp;3&nbsp;раза быстрее, а&nbsp;правок стало вдвое меньше. Сверстал AMP-письма для&nbsp;10+&nbsp;заказчиков.</p>
-          </li>
-          <li>
-            <div class="client__head"><b>Bosco</b><span class="client__year">с&nbsp;2022</span></div>
-            <p>Техническое развитие email-каналов, поддержка вёрстки регулярных рассылок и&nbsp;триггерных писем.</p>
-            <p class="ach">Сверстал мастер-шаблоны и&nbsp;запустил AMP. В&nbsp;сжатые сроки перенёс рассылки на&nbsp;новую платформу без&nbsp;перерыва в&nbsp;коммуникациях.</p>
-          </li>
-          <li>
-            <div class="client__head"><b>ToStars</b><span class="client__year">Сезонные проекты</span></div>
-            <p>Самостоятельное создание креативных писем: от&nbsp;идеи и&nbsp;текста до&nbsp;дизайна и&nbsp;вёрстки.</p>
-            <p class="ach">Разработал дизайн и&nbsp;сверстал новый мастер-шаблон. Заказчик возвращается с&nbsp;новыми проектами каждый сезон.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
