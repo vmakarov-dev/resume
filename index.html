@@ -485,6 +485,48 @@
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.6 6.6 11.6 12.5 4.8' fill='none' stroke='%233f9a70' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
     }
 
+    /* Примеры писем: серые плашки как у стека, с мятной меткой типа */
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .examples__label {
+      margin-right: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .examples__chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px 7px 14px;
+      border-radius: 8px;
+      background: var(--plate);
+      color: var(--ink);
+      font-size: 15px;
+      text-decoration: none;
+      transition: background-color .15s;
+    }
+
+    .examples__chip:hover,
+    .examples__chip:focus-visible {
+      background: #eaebee;
+    }
+
+    .examples__kind {
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: #dcf1e6;
+      color: #2a6e4f;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
     .clients {
       display: grid;
       gap: 26px;
@@ -824,6 +866,12 @@
         <p class="ach">13&nbsp;отраслевых наград за&nbsp;письма Skyeng и&nbsp;Skysmart с&nbsp;2024&nbsp;года, шесть из&nbsp;них за&nbsp;первое место в&nbsp;номинациях за&nbsp;креатив и&nbsp;дизайн. О&nbsp;письмах пишут профильные Telegram-каналы, они попадают в&nbsp;подборки лучших рассылок, а&nbsp;подписчики оставляют положительные отзывы в&nbsp;форме обратной связи.</p>
         <p class="ach">Закрыл пиковые нагрузки (чёрная пятница, back to school): до&nbsp;10&nbsp;писем в&nbsp;день без&nbsp;срыва сроков и&nbsp;ошибок в&nbsp;вёрстке.</p>
         <p class="ach">Настроил своего ИИ-агента под&nbsp;письма Skyeng: семантику текстов, особенности шаблона и&nbsp;устоявшиеся практики команды. Рутинные задачи теперь выполняются в&nbsp;6&nbsp;раз быстрее.</p>
+        <p class="examples"><span class="examples__label">Примеры</span>
+          <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/skyeng-turkey.html" target="_blank" rel="noopener">Индейка<span class="examples__kind">AMP</span></a>
+          <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/skyeng-shashlik.html" target="_blank" rel="noopener">Шашлык<span class="examples__kind">HTML</span></a>
+          <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/skysmart-crossword.html" target="_blank" rel="noopener">Кроссворд<span class="examples__kind">AMP</span></a>
+          <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/skyeng-globe.html" target="_blank" rel="noopener">Глобус<span class="examples__kind">AMP</span></a>
+        </p>
       </div>
 
       <div class="job">
@@ -852,6 +900,10 @@
             <p class="ach">Принёс заказчику 14&nbsp;бронирований одним письмом при&nbsp;обычных 1–2&nbsp;с&nbsp;рассылки. Это письмо победило сразу в&nbsp;двух номинациях Unisender Awards 2026: «Письмо года» и&nbsp;«Эффективность года».</p>
             <p class="ach">Всего получил 5&nbsp;наград за&nbsp;авторские письма на&nbsp;EC Awards и&nbsp;Unisender Awards, включая 3&nbsp;первых места. Заказчик возвращается с&nbsp;новыми проектами каждый сезон.</p>
             <p class="ach">Разработал дизайн и&nbsp;сверстал новый мастер-шаблон для&nbsp;повседневных рассылок.</p>
+            <p class="examples"><span class="examples__label">Примеры</span>
+              <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/tostars-iceberg.html" target="_blank" rel="noopener">Айсберг<span class="examples__kind">AMP</span></a>
+              <a class="examples__chip" href="https://vmakarov-dev.github.io/Email-for-Awards-List/tostars-aurora.html" target="_blank" rel="noopener">Сияние<span class="examples__kind">HTML</span></a>
+            </p>
           </li>
         </ul>
       </div>
